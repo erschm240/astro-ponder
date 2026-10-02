@@ -1,0 +1,48 @@
+---
+import HeaderLink from '../components/HeaderLink.astro';
+---
+
+<header>
+    <nav>
+        <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/contact">Contact</HeaderLink>
+        <HeaderLink href="/posts">Posts</HeaderLink>
+        <HeaderLink href="/cart">Cart</HeaderLink>
+    </nav>
+</header>
+
+<style>
+    nav {
+        display: flex;
+        justify-content: space-around;
+        background-color: seagreen;
+        /* color: #ffffff; */
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+    }
+</style>
+
+<!-- I did try this part on my own, I changed my code to be similar to the example because I misunderstood it so badly. Here is my original code: -->
+
+<!-- 
+---
+import HeaderLink from '../components/HeaderLink.astro';
+---
+
+<nav>
+    <HeaderLink>
+
+    </HeaderLink>
+</nav>
+
+<style>
+    nav {
+        display: flex;
+        justify-content: space-around;
+        background-color: seagreen;
+        /* color: #ffffff; */
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+    }
+</style> 
+-->

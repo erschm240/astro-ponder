@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection("posts");
+console.log("Posts: ", posts);
+const title = "Posts";
+---
+
+<BaseLayout title={title}>
+	<section>
+		<ul>
+			{
+				// Note: We are just returning HTML from our map function. With embedded content: {variable}
+				posts.map((post: any) => (
+					<li>
+						<a href={`/posts/${post.id}/`}>
+							<h3 class="title">{post.data.title}</h3>
+							<p class="date">{post.data.summary}</p>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</BaseLayout>

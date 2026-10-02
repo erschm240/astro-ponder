@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Details from '../components/Details.astro';
+const title = "Home";
+---
+<BaseLayout title={title}>
+	<body>
+		<Details class="some-class" aria-label="component example">
+			<p>Child Content</p>
+		</Details>
+	</body>
+</BaseLayout>

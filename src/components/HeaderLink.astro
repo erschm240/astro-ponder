@@ -1,0 +1,48 @@
+---
+const { href, class: className, ...props} = Astro.props;
+
+const { pathname } = Astro.url;
+
+console.log(pathname, href);
+
+const isActive = href === pathname;
+---
+
+<a href={href} class:list={[className, { active: isActive}]} {...props}>
+    <slot />
+</a>
+
+<style>
+    a {
+        color: #ffffff;
+        text-decoration: none;
+
+        a.active {
+            color: #9dff9b;
+        }
+    }
+</style>
+
+
+<!-- I did try this part on my own, I changed my code to be similar to the example because I misunderstood it so badly. Here is my original code: -->
+
+<!-- 
+---
+
+---
+
+<a href="#">Home</a>
+<a href="#">Contact</a>
+<a href="#">Link 3</a>
+
+<style>
+    a {
+        color: #ffffff;
+        text-decoration: none;
+
+        a.active {
+            color: #9dff9b;
+        }
+    }
+</style> 
+-->
